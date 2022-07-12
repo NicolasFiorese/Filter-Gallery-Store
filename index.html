@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter Gallery Store</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <ul>
+        <li class="list active" data-filter="all">Tudo</li>
+        <li class="list" data-filter="action">Action Figures</li>
+        <li class="list" data-filter="shirt">Camisetas</li>
+        <li class="list" data-filter="hat">Bonés</li>
+        <li class="list" data-filter="poster">Pôsters</li>
+        <li class="list" data-filter="brooch">Broches</li>
+      </ul>
+      <div class="product">
+        <div class="itemBox action">
+          <img src="assets/action1.jpg" alt="Imagem de uma Action Figure" />
+        </div>
+
+        <div class="itemBox shirt">
+          <img src="assets/shirt1.jpg" alt="Imagem de uma Camiseta" />
+        </div>
+
+        <div class="itemBox hat">
+          <img src="assets/hat1.jpg" alt="Imagem de um Boné" />
+        </div>
+
+        <div class="itemBox poster">
+          <img src="assets/poster1.jpg" alt="Imagem de um Pôster" />
+        </div>
+
+        <div class="itemBox brooch">
+          <img src="assets/brooch1.jpg" alt="Imagem de um Broche" />
+        </div>
+        <div class="itemBox action">
+          <img src="assets/action2.jpg" alt="Imagem de uma Action Figure2" />
+        </div>
+
+        <div class="itemBox shirt">
+          <img src="assets/shirt2.jpg" alt="Imagem de uma Camiseta2" />
+        </div>
+
+        <div class="itemBox hat">
+          <img src="assets/hat2.jpg" alt="Imagem de um Boné2" />
+        </div>
+
+        <div class="itemBox poster">
+          <img src="assets/poster2.jpg" alt="Imagem de um Pôster2" />
+        </div>
+
+        <div class="itemBox brooch">
+          <img src="assets/brooch2.jpg" alt="Imagem de um Broche2" />
+        </div>
+        <div class="itemBox action">
+          <img src="assets/action3.jpg" alt="Imagem de uma Action Figure3" />
+        </div>
+
+        <div class="itemBox shirt">
+          <img src="assets/shirt3.jpg" alt="Imagem de uma Camiseta3" />
+        </div>
+
+        <div class="itemBox hat">
+          <img src="assets/hat3.jpg" alt="Imagem de um Boné3" />
+        </div>
+
+        <div class="itemBox poster">
+          <img src="assets/poster3.jpg" alt="Imagem de um Pôster3" />
+        </div>
+
+        <div class="itemBox brooch">
+          <img src="assets/brooch3.jpg" alt="Imagem de um Broche3" />
+        </div>
+        <div class="itemBox action">
+          <img src="assets/action4.jpg" alt="Imagem de uma Action Figure4" />
+        </div>
+
+        <div class="itemBox shirt">
+          <img src="assets/shirt4.jpg" alt="Imagem de uma Camiseta4" />
+        </div>
+
+        <div class="itemBox hat">
+          <img src="assets/hat4.jpg" alt="Imagem de um Boné4" />
+        </div>
+
+        <div class="itemBox poster">
+          <img src="assets/poster4.jpg" alt="Imagem de um Pôster4" />
+        </div>
+
+        <div class="itemBox brooch">
+          <img src="assets/brooch4.jpg" alt="Imagem de um Broche4" />
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('.list').click(function () {
+          const value = $(this).attr('data-filter')
+          if (value == 'all') {
+            $('.itemBox').show('1000')
+          } else {
+            $('.itemBox')
+              .not('.' + value)
+              .hide('1000')
+            $('.itemBox')
+              .filter('.' + value)
+              .show('1000')
+          }
+        })
+        // add active class on selected item
+
+        $('.list').click(function () {
+          $(this).addClass('active').siblings().removeClass('active')
+        })
+      })
+    </script>
+  </body>
+</html>
